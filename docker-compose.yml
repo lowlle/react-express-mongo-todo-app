@@ -18,7 +18,6 @@ services:
       args:
         API_URL: "http://localhost:6543"
     ports:
-      - 3000:3000
       - 3001:80
     networks:
       - app-network
