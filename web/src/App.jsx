@@ -1,5 +1,6 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { DialogContextProvider } from "./context/dialog-context";
+import { BrowserRouter } from "react-router-dom";
 
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -17,9 +18,11 @@ function App() {
         <ThemeProvider theme={theme}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DialogContextProvider>
-                    <AppHeader />
-                    <AppRoutes />
-                    <AppDialog />
+                    <BrowserRouter>
+                        <AppHeader />
+                        <AppRoutes />
+                        <AppDialog />
+                    </BrowserRouter>
                 </DialogContextProvider>
             </LocalizationProvider>
         </ThemeProvider>

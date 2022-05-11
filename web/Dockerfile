@@ -15,5 +15,7 @@ RUN REACT_APP_API_URL=${API_URL} \
 
 FROM nginx:stable-alpine AS nginx
 COPY --from=web /srv/dist/ /usr/share/nginx/html/
+COPY --from=web /srv/nginx/default.conf /etc/nginx/conf.d/default.conf
+
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;" ]

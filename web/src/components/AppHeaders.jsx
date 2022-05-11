@@ -5,15 +5,37 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+
+import { useNavigate } from "react-router-dom";
 
 const AppHeader = () => {
+    const navigate = useNavigate();
+
     return (
         <>
             <AppBar position="relative">
                 <Toolbar>
-                    <Typography variant="h6" color="inherit" noWrap>
-                        TODO APP
-                    </Typography>
+                    <Box sx={{ flexGrow: 1 }}>
+                        <Typography
+                            variant="h6"
+                            color="inherit"
+                            noWrap
+                            component="a"
+                            href="/"
+                            sx={{
+                                fontWeight: 700,
+                                letterSpacing: ".3rem",
+                                color: "inherit",
+                                textDecoration: "none",
+                            }}
+                        >
+                            TODO APP
+                        </Typography>
+                    </Box>
+                    <Button color="inherit" onClick={() => navigate("/about")}>
+                        About
+                    </Button>
                 </Toolbar>
             </AppBar>
             <Box
@@ -21,7 +43,7 @@ const AppHeader = () => {
                     bgcolor: "background.paper",
                     pt: 8,
                     pb: 6,
-                    mb: 5
+                    mb: 5,
                 }}
             >
                 <Container maxWidth="sm">
