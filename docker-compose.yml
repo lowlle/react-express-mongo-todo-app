@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  api:
+    build: './api'
+    ports:
+      - 6543:6543
+    environment:
+      PORT: 6543
+      DB_CONNECTION: mongodb+srv://*****.mongodb.net/ # MongoDB Connection
+      DB_NAME: xxxx                                   # Database Name
+      DB_COLLECTION: todo                             # Collection Name
+      DB_SEED: 'true'                                 # If the collection should be seeded.
+    networks:
+      - app-network
+  web:
+    build: 
+      context: './web'
+      args:
+        API_URL: "http://localhost:6543"
+    ports:
+      - 3000:3000
+      - 3001:80
+    networks:
+      - app-network
+networks:
+  app-network:
