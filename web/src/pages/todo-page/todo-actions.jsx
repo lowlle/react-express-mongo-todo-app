@@ -2,6 +2,7 @@ import { useDeleteTaskMutation } from "../../store/slices/task-slice";
 import { useDialog } from "../../hooks/dialog-hooks";
 import { useSnackbar } from "../../hooks/snackbar-hooks";
 
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
@@ -32,10 +33,11 @@ const TodoActions = () => {
             },
             {
                 name: "Delete",
-                icon: <DeleteIcon />,
+                icon: <ThumbUpIcon />,
                 handler: async ({ _id }) => {
                     const isConfirmed = await confirm({
-                        message: "Are you sure you want to proceed?",
+                        title: "Task completed?",
+                        message: "This will remove the task. Are you sure you want to proceed?",
                     });
                     if (isConfirmed)
                         deleteTask(_id).then(() => {
