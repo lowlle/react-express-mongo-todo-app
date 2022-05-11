@@ -5,7 +5,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 
 import AppHeader from "./components/AppHeaders";
-import TodoPage from "./pages/todo-page";
+import AppRoutes from "./AppRoutes";
 import AppDialog from "./components/AppDialog";
 
 import "./App.css";
@@ -18,7 +18,7 @@ function App() {
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DialogContextProvider>
                     <AppHeader />
-                    <TodoPage />
+                    <AppRoutes />
                     <AppDialog />
                 </DialogContextProvider>
             </LocalizationProvider>
