@@ -38,7 +38,7 @@ services:
 $ docker-compose up
 ```
 3. Open the browser in `http://localhost:3001`
-![Demo](https://drive.google.com/uc?id=11WRzzs7JNBoeNzJSgsubk0POOQaNfc6Xz)
+![Demo](https://media.giphy.com/media/F7z2jN2xXSCQ83F92n/giphy.gif)
 
 ## Libraries
 * [React](https://github.com/facebook/react)
